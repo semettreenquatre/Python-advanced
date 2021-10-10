@@ -1,0 +1,28 @@
+class Shape():
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def __repr__(self):
+        return 'Some shape {}*{}'.format(self.width, self.height)
+
+class Triangle(Shape):
+    def __init__(self, width, height):
+        super().__init__(width, height)
+        self.__vertex_number = 3
+
+    def area(self):
+        return self.width * self.height / 2
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        super().__init__(width, height)
+        self.__vertex_number = 4
+
+    def area(self):
+        return self.width * self.height
+
+shape = Shape(1, 2)
+triangle = Triangle(5, 5)
+rectangle = Rectangle(5, 5)
+print(shape, triangle.area(), rectangle.area(), '-------------------', sep='\n')

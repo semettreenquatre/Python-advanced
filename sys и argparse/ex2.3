@@ -1,0 +1,17 @@
+def swap(func):
+    def wrapped(*args, **kwargs):
+        arr = args[::-1]
+        return(func(*arr, **kwargs))
+    return wrapped
+
+@swap
+
+
+def div(a, b, show=False):
+    res = a / b
+    if show:
+        print(res)
+    return res
+
+a, b = map(int, input().split())
+div(a, b, show=True)
